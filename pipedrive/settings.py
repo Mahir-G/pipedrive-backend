@@ -25,7 +25,7 @@ SECRET_KEY = '@r%n-ena72vzj9&f1p)jo!giau7&s!9agbo(i!%5r=&df5*0-^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.234.169.189', 'ec2-18-234-169-189.compute-1.amazonaws.com']
+ALLOWED_HOSTS = ['18.234.169.189', 'ec2-18-234-169-189.compute-1.amazonaws.com', '127.0.0.1']
 
 
 # Application definition
@@ -41,6 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
